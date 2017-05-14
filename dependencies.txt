@@ -1,1 +1,1 @@
-Loggout v1.0.0 or higher
+Recipe Container v1.0.0
