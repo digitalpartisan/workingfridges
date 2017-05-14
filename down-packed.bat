@@ -1,1 +1,1 @@
-del /q "K:\Steam\steamapps\common\Fallout 4\Data\RecipeContainer - Main.ba2"
+del /q "K:\Steam\steamapps\common\Fallout 4\Data\WorkingFridges - Main.ba2"
