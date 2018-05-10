@@ -1,1 +1,3 @@
 Recipe Container v1.0.0
+Inject-Tec v1.4.0
+Chronicle v1.0.0
