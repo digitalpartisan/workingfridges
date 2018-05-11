@@ -1,11 +1,14 @@
-Working Fridges creates five workshop objects which refrigerate beverages placed in them.  It also disables the busted fridge in the Diamond City market and replaces it with a working fridge.
-
-These fridges work with all recipes registered with Drinking Buddy.  This means that any DLC recipes will just work in the fridges from this mod.  This mod also includes custom recipes for Ice Cold Purified Water, Ice Cold Institute Bottled Water, and Ice Cold Deezer's Lemonade.
-
-Cooling works in three hour cycles.  The workshop fridges will produce warm beverages from cool ones if they lose power.
-
-Working Fridges makes use of Recipe Container (which is bundled in Working Fridges) and requires the Far Harbor DLC because of the VIM Machine asset.
-
-This has been done before.  If you're inclined to pass this mod by, then do so!  It was originally intended as a proof-of-concept and example mod to illustrate how to use the Recipe Container library, but it was released as a stand-alone package because it provides actual functionality.
-
-The workshop fridge objects can be found under Furniture > Containers.
+Working Fridges creates buildable workshop objects which will refrigerate every drink Drinking Buddy knows (including DLC beverages) and more.  It also disables the busted fridge in the Diamond City market and replaces it with a working fridge to demo the behavior.
+Cooling takes three in-game hours.  Buildable fridges require radiant power to operate and drinks in them will warm if power is lost.  The workshop objects are in the Furniture > Containers menu.  By default, they are:
+ * a blue pre-war fridge (labeled "Refrigerator"),
+ * a metal post-war fridge (also labeled "Refrigerator"),
+ * a Nuka-Cola machine (labeled "Refrigerated Nuka-Cola Machine"),
+ * a milk machine (labeled "Refrigerated Milk Machine"),
+ * and an ice machine (labeled "Refrigerated Ice Machine").
+You can recognize the objects by their description which will make mention of both the need for radiant power and the requirement of a cryo cell to build them.
+DLC compatibility:
+ * The hard requirement of Far Harbor to use Working Fridges has been eliminated
+ * The buildable Refrigerated Vim Machine remains available for building (in the same menu as the other fridges) should Far Harbor be installed
+Third-party compatibility:
+ * Modular Kitchen by evanpox, Working Fridges will add a sub-menu to Modular Kitchen's menu in Furniture called "Functional Refrigerators" with fridges matching the options provided by Modular Kitchen.
+A holotape named "[Settings] Working Fridges" (so that it will appear in the settings folder if you're using the appropriate sorting and UI mods) has been added.  It will facilitate uninstalling Working Fridges properly.  It will also report on the status of any third-party compatibility option.  If you wish to report a suspected malfunction, please include the holotape's output regarding the option you're concerned with.

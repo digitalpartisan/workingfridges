@@ -1,5 +1,5 @@
 ;BEGIN FRAGMENT CODE - Do not edit anything between this and the end comment
-Scriptname WorkingFridges:Fragments:Terminals:HolotapeEntrypoint Extends Terminal Hidden Const
+Scriptname WorkingFridges:Fragments:Terminals:Holotape Extends Terminal Hidden Const
 
 ;BEGIN FRAGMENT Fragment_Terminal_02
 Function Fragment_Terminal_02(ObjectReference akTerminalRef)
