@@ -10,5 +10,5 @@ DLC compatibility:
  * The hard requirement of Far Harbor to use Working Fridges has been eliminated
  * The buildable Refrigerated Vim Machine remains available for building (in the same menu as the other fridges) should Far Harbor be installed
 Third-party compatibility:
- * Modular Kitchen by evanpox, Working Fridges will add a sub-menu to Modular Kitchen's menu in Furniture called "Functional Refrigerators" with fridges matching the options provided by Modular Kitchen.
+ * Modular Kitchen by evanpox, Working Fridges will add a sub-menu to Modular Kitchen's menu in Furniture called "Working Fridges" with fridges matching the options provided by Modular Kitchen.
 A holotape named "[Settings] Working Fridges" (so that it will appear in the settings folder if you're using the appropriate sorting and UI mods) has been added.  It will facilitate uninstalling Working Fridges properly.  It will also report on the status of any third-party compatibility option.  If you wish to report a suspected malfunction, please include the holotape's output regarding the option you're concerned with.

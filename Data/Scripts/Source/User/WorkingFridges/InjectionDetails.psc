@@ -30,8 +30,10 @@ EndFunction
 
 Function run()
 	getInjector().inject()
+	examineState()
 EndFunction
 
 Function forceRun()
 	getInjector().forceInject()
+	examineState()
 EndFunction

@@ -1,7 +1,9 @@
 [
-	"Data\\Scripts\\Loggout.pex",
-	"Data\\SCRIPTS\\RecipeContainer\\Logic\\Fridge.pex",
-	"Data\\SCRIPTS\\RecipeContainer\\ContainerInstance.pex",
-	"Data\\Scripts\\RecipeContainer\\Logger.pex",
-	"Data\\SCRIPTS\\recipecontainer\\logic.pex"
+	"Data\\Scripts\\WorkingFridges\\EngineDetails.pex",
+	"Data\\Scripts\\WorkingFridges\\Fragments\\Terminals\\HolotapeEntrypoint.pex",
+	"Data\\Scripts\\WorkingFridges\\Fragments\\Terminals\\InjectionDetails.pex",
+	"Data\\Scripts\\WorkingFridges\\Fragments\\Terminals\\Injections.pex",
+	"Data\\Scripts\\WorkingFridges\\Fragments\\Terminals\\Uninstaller.pex",
+	"Data\\Scripts\\WorkingFridges\\InjectionDetails.pex",
+	"Data\\Scripts\\WorkingFridges\\PackageCustomizations.pex"
 ]

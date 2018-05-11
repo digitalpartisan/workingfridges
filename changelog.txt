@@ -4,6 +4,7 @@ Integrated Chronicle v1.0.0
 Removed Far Harbor DLC dependency, though the Vim machine remains available if Far Harbor is installed
 Incorporated Working Fridges for Modular Kitchen as an optional compatibility mode
 Added a cold version of dirty water
+Enabled existing Ice Cold Beer variant
 Made custom cold beverages in Working Fridges VIS-compatible
 
 v1.0.0
