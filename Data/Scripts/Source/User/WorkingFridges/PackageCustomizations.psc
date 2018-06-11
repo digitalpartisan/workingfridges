@@ -1,26 +1,7 @@
 Scriptname WorkingFridges:PackageCustomizations extends Chronicle:Package:CustomBehavior
 
-InjectTec:Injector:Bulk[] Property DLCPatches = None Auto Const Mandatory
-InjectTec:Injector[] Property Injections = None Auto Const Mandatory
-
-Vault111ExitDetector Property WorkingFridges_Vault111ExitDetector Auto Const Mandatory
-HolotapeRetainer Property WorkingFridges_HolotapeRetainer Auto Const Mandatory
-
-Function handleDLCPatches(Bool bInject = true)
-	if (!DLCPatches)
-		return
-	endif
-	
-	Int iCounter = 0
-	while (iCounter < DLCPatches.Length)
-		if (bInject)
-			DLCPatches[iCounter].inject()
-		else
-			DLCPatches[iCounter].revert()
-		endif
-		iCounter += 1
-	endWhile
-EndFunction
+InjectTec:Injector[] Property Injections = None Auto Const
+WorkingFridges:ThirdPartyOption[] Property ThirdPartyOptions = None Auto Const
 
 Function handleInjections(Bool bInject = true)
 	if (!Injections)
@@ -38,31 +19,33 @@ Function handleInjections(Bool bInject = true)
 	endWhile
 EndFunction
 
-Function runInjections()
-	handleDLCPatches()
-	handleInjections()
-EndFunction	
-
-Function revertInjections()
-	handleDLCPatches(false)
-	handleInjections(false)
+Function handleThirdPartyOptions(Bool bCheck = true)
+	Int iCounter = 0
+	while (iCounter < ThirdPartyOptions.Length)
+		if (bCheck)
+			ThirdPartyOptions[iCounter].stateCheck()
+		else
+			ThirdPartyOptions[iCounter].teardown()
+		endif
+		
+		iCounter += 1
+	endWhile
 EndFunction
 
 Bool Function installBehavior()
-	runInjections()
-	return true
+	handleInjections()
+	handleThirdPartyOptions()
+	return parent.installBehavior()
 EndFunction
 
 Bool Function postloadBehavior()
-	runInjections()
-	return true
+	handleInjections()
+	handleThirdPartyOptions()
+	return parent.postloadBehavior()
 EndFunction
 
 Bool Function uninstallBehavior()
-	revertInjections()
-	
-	WorkingFridges_Vault111ExitDetector.Stop()
-	WorkingFridges_HolotapeRetainer.Stop()
-	
-	return true
+	handleInjections(false)
+	handleThirdPartyOptions(false)
+	return parent.uninstallBehavior()
 EndFunction
