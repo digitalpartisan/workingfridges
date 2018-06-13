@@ -5,10 +5,6 @@ Vault111ExitDetector Property WorkingFridges_Vault111ExitDetector Auto Const Man
 HolotapeRetainer Property WorkingFridges_HolotapeRetainer Auto Const Mandatory
 RecipeContainer:Logic:Fridge Property WorkingFridges_FridgeType Auto Const Mandatory
 
-RecipeContainer:Logic:Fridge Function getFridgeType()
-	return WorkingFridges_FridgeType
-EndFunction
-
 Function handleDLCPatches(Bool bInject = true)
 	if (!DLCPatches)
 		return
@@ -34,7 +30,7 @@ Bool Function postloadBehavior()
 	handleDLCPatches()
 	Bool bResult = parent.postloadBehavior()
 	
-	getFridgeType().cleanData() ; this needs to happen after all the other normal package behavior
+	WorkingFridges_FridgeType.cleanData() ; this needs to happen after all the other normal package behavior
 	
 	return bResult
 EndFunction

@@ -2,8 +2,8 @@ v1.2.0
 Integrated Dynamic Terminal v1.3.0
 Fixed a bug where the misconfiguration of the Chronicle package management system caused game load events not to be processed correctly
 Rewrote the Third Party Option content system
-Incorporated the V Energy drink beverage and vending machine from Bit Better Fallout
 Incorporated the Sarsaparilla beverage option from Wasteland Imports
+Incorporated the V Energy drink beverage and vending machine from Bit Better Fallout
 Incorporated the Pilsner from Lima Detatchment
 Incorporated Milk from Altairp's Animal Farm
 

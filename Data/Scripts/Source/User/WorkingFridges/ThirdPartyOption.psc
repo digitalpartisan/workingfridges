@@ -3,8 +3,10 @@ Scriptname WorkingFridges:ThirdPartyOption extends Quest Conditional
 Import DialogueDrinkingBuddyScript
 
 InjectTec:Plugin Property Plugin Auto Const Mandatory
-InjectTec:Injector:Bulk Property Injections Auto Const Mandatory
+InjectTec:Injector:Bulk Property Injections = None Auto Const
 Chronicle:Package Property MyPackage Auto Const Mandatory
+
+RecipeContainer:Logic:Fridge Property WorkingFridges_FridgeType Auto Const Mandatory
 
 Bool bHasRun = false Conditional
 BrewingRecipe[] recipeList = None
@@ -26,7 +28,7 @@ Bool Function needsTeardown()
 EndFunction
 
 RecipeContainer:Logic:Fridge Function getFridgeType()
-	(MyPackage.getEngine().getCorePackage().getCustomizations() as WorkingFridges:PackageCustomizations:Core).getFridgeType()
+	return WorkingFridges_FridgeType
 EndFunction
 
 BrewingRecipe[] Function getRecipes()
@@ -41,20 +43,34 @@ Function addRecipe(BrewingRecipe newRecipe)
 	recipeList.Add(newRecipe)
 EndFunction
 
+Function buildRecipesLogic()
+{Override this in a child class to generate recipes for adding to Working Fridges' container.}
+EndFunction
+
 Function buildRecipeList()
 	resetRecipeList()
+	buildRecipesLogic()
 EndFunction
 
 Function handleRecipes(Bool bAdd = true)
+	BrewingRecipe[] recipeData = getRecipes()
+	if (0 == recipeData.Length)
+		return
+	endif
+
 	if (bAdd)
-		getFridgeType().addRecipes(getRecipes())
+		getFridgeType().addRecipes(recipeData)
 	else
-		getFridgeType().removeRecipes(getRecipes())
+		getFridgeType().removeRecipes(recipeData)
 		resetRecipeList() ; pure paranoia, but that never hurt anyone
 	endif
 EndFunction
 
 Function handleInjections(Bool bInject = true, Bool bForce = false)
+	if (!Injections)
+		return
+	endif
+
 	if (bInject)
 		Injections.inject(bForce)
 	else
