@@ -2,5 +2,6 @@ Loggout v1.0.0
 Vault111 Exit Detector v1.0.1
 Holotape Retainer v1.1.0
 Inject-Tec v1.5.0
+Dynamic Terminal v1.3.0
 Chronicle v1.0.0
-Recipe Container v1.0.0
+Recipe Container v1.1.0
