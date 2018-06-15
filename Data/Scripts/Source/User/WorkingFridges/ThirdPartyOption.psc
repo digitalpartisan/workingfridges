@@ -5,8 +5,8 @@ Import DialogueDrinkingBuddyScript
 InjectTec:Plugin Property Plugin Auto Const Mandatory
 InjectTec:Injector:Bulk Property Injections = None Auto Const
 Chronicle:Package Property MyPackage Auto Const Mandatory
-
 RecipeContainer:Logic:Fridge Property WorkingFridges_FridgeType Auto Const Mandatory
+WorkingFridges:ThirdPartyContainer Property WorkingFridges_Testing_ThirdPartyLocker Auto Const Mandatory
 
 Bool bHasRun = false Conditional
 BrewingRecipe[] recipeList = None
@@ -58,6 +58,8 @@ Function handleRecipes(Bool bAdd = true)
 		return
 	endif
 
+	WorkingFridges_Testing_ThirdPartyLocker.handleRecipes(recipeData, bAdd)
+	
 	if (bAdd)
 		getFridgeType().addRecipes(recipeData)
 	else

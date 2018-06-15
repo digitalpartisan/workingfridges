@@ -1,6 +1,6 @@
 Scriptname WorkingFridges:PackageCustomizations:Core extends WorkingFridges:PackageCustomizations
 
-InjectTec:Injector:Bulk[] Property DLCPatches = None Auto Const
+InjectTec:Injector:Bulk[] Property DLCPatches Auto Const
 Vault111ExitDetector Property WorkingFridges_Vault111ExitDetector Auto Const Mandatory
 HolotapeRetainer Property WorkingFridges_HolotapeRetainer Auto Const Mandatory
 RecipeContainer:Logic:Fridge Property WorkingFridges_FridgeType Auto Const Mandatory
@@ -30,7 +30,7 @@ Bool Function postloadBehavior()
 	handleDLCPatches()
 	Bool bResult = parent.postloadBehavior()
 	
-	WorkingFridges_FridgeType.cleanData() ; this needs to happen after all the other normal package behavior
+	WorkingFridges_FridgeType.cleanData() ; this needs to happen after all the other normal package behavior so that third party compatibility options are handled already
 	
 	return bResult
 EndFunction
