@@ -4,7 +4,7 @@ Scriptname WorkingFridges:Fragments:Terminals:PackageHandler Extends Terminal Hi
 ;BEGIN FRAGMENT Fragment_Terminal_01
 Function Fragment_Terminal_01(ObjectReference akTerminalRef)
 ;BEGIN CODE
-OptionData.setData( (PackageHandler.getPackage().GetCustomizations() as WorkingFridges:PackageCustomizations).ThirdPartyOptions as Form[] )
+OptionData.setData(PackageHandler.getThirdPartyOptions())
 OptionPaginator.init(akTerminalRef, OptionData)
 ;END CODE
 EndFunction
@@ -20,7 +20,7 @@ EndFunction
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
-Chronicle:Package:Handler Property PackageHandler Auto Const
+WorkingFridges:PackageHandler Property PackageHandler Auto Const
 
 DynamicTerminal:ListWrapper:DynamicArray Property OptionData Auto Const
 

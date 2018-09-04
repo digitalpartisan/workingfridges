@@ -1,3 +1,11 @@
+v1.3.0
+Integrated Loggout v1.1.0
+Integrated Inject-Tec v.1.6.0
+Integrated Dynamic Terminal v1.4.0
+Integrated Chronicle v1.1.0
+Integrated Recipe Container v1.2.0
+Incorporated the Soda Heaven beverages from Soda Heaven by MrMod89 as a third-party content option
+
 v1.2.0
 Integrated Dynamic Terminal v1.3.0
 Fixed a bug where the misconfiguration of the Chronicle package management system caused game load events not to be processed correctly

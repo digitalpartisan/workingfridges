@@ -1,10 +1,8 @@
-Scriptname WorkingFridges:ThirdPartyOption extends Quest Conditional
+Scriptname WorkingFridges:ThirdPartyOption extends RecipeContainer:RemoteRecipes Conditional
 
 Import DialogueDrinkingBuddyScript
 
-InjectTec:Plugin Property Plugin Auto Const Mandatory
 InjectTec:Injector:Bulk Property Injections = None Auto Const
-Chronicle:Package Property MyPackage Auto Const Mandatory
 RecipeContainer:Logic:Fridge Property WorkingFridges_FridgeType Auto Const Mandatory
 WorkingFridges:ThirdPartyContainer Property WorkingFridges_Testing_ThirdPartyLocker Auto Const Mandatory
 
@@ -44,7 +42,8 @@ Function addRecipe(BrewingRecipe newRecipe)
 EndFunction
 
 Function buildRecipesLogic()
-{Override this in a child class to generate recipes for adding to Working Fridges' container.}
+{Written to be overriden in child scripts based on unpredictable needs.}
+	recipeList = buildRecipes()
 EndFunction
 
 Function buildRecipeList()
