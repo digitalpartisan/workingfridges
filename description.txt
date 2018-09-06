@@ -19,6 +19,7 @@ Optional Third-party compatibility features (obviously requiring the named mods 
  * Bit Better Fallout (https://www.nexusmods.com/fallout4/mods/29056) by Bit Better Mods, V-Energy drink added to Working Fridges and the V-Energy drink machine is buildable (also in the Furniture > Containers menu)
  * Lima Detachment (https://www.nexusmods.com/fallout4/mods/29042) by Col_Mustard, Add the Patriotic Pilsner to Working Fridges
  * Altairp's Animal Farm (https://www.nexusmods.com/fallout4/mods/23421) by Altairp, Adds the various milk beverages to Working Fridges
+ * Soda Heaven (https://www.nexusmods.com/fallout4/mods/29763) by MrMod89, Adds the sodas and other beverages to Working Fridges
  
 If you would like compatibility with a plugin not already listed, ask.  We make no promises, but there's a great chance your request will be implemented.
  
