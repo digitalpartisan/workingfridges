@@ -37,10 +37,6 @@ Function resetRecipeList()
 	recipeList = new BrewingRecipe[0]
 EndFunction
 
-Function addRecipe(BrewingRecipe newRecipe)
-	recipeList.Add(newRecipe)
-EndFunction
-
 Function buildRecipesLogic()
 {Written to be overriden in child scripts based on unpredictable needs.}
 	recipeList = buildRecipes()
