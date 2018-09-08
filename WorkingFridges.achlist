@@ -8,14 +8,12 @@
 	"Data\\Scripts\\WorkingFridges\\Fragments\\Terminals\\ThirdPartyOptionPaginator.pex",
 	"Data\\Scripts\\WorkingFridges\\Fragments\\Terminals\\Uninstaller.pex",
 	"Data\\Scripts\\WorkingFridges\\Logger.pex",
-	"Data\\Scripts\\WorkingFridges\\PackageCustomizations\\Core.pex",
-	"Data\\Scripts\\WorkingFridges\\PackageCustomizations.pex",
+	"Data\\Scripts\\WorkingFridges\\PackageData.pex",
+	"Data\\Scripts\\WorkingFridges\\PackageHandler.pex",
 	"Data\\Scripts\\WorkingFridges\\ThirdPartyContainer.pex",
-	"Data\\Scripts\\WorkingFridges\\thirdpartyoption\\AltairpAnimalFarm.pex",
 	"Data\\Scripts\\WorkingFridges\\thirdpartyoption\\Handler.pex",
-	"Data\\Scripts\\WorkingFridges\\thirdpartyoption\\LimaDetachment.pex",
+	"Data\\Scripts\\WorkingFridges\\thirdpartyoption\\PackageBehavior.pex",
 	"Data\\Scripts\\WorkingFridges\\thirdpartyoption\\Paginator.pex",
-	"Data\\Scripts\\WorkingFridges\\thirdpartyoption\\VEnergy.pex",
-	"Data\\Scripts\\WorkingFridges\\thirdpartyoption\\WastelandImports.pex",
+	"Data\\Scripts\\WorkingFridges\\thirdpartyoption\\SodaHeaven.pex",
 	"Data\\Scripts\\WorkingFridges\\ThirdPartyOption.pex"
 ]
