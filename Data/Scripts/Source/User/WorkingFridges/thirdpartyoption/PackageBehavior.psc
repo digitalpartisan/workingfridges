@@ -2,30 +2,21 @@ Scriptname WorkingFridges:ThirdPartyOption:PackageBehavior extends Chronicle:Pac
 
 WorkingFridges:ThirdPartyOption[] Property ThirdPartyOptions = None Auto Const
 
-Function handleThirdPartyOptions(Bool bCheck = true)
-	Int iCounter = 0
-	while (iCounter < ThirdPartyOptions.Length)
-		if (bCheck)
-			ThirdPartyOptions[iCounter].stateCheck()
-		else
-			ThirdPartyOptions[iCounter].teardown()
-		endif
-		
-		iCounter += 1
-	endWhile
+Function handle(Bool bCheck = true)
+	WorkingFridges:ThirdPartyOption.handleBulk(ThirdPartyOptions, bCheck)
 EndFunction
 
 Bool Function installBehavior()
-	handleThirdPartyOptions()
+	handle()
 	return true
 EndFunction
 
 Bool Function postloadBehavior()
-	handleThirdPartyOptions()
+	handle()
 	return true
 EndFunction
 
 Bool Function uninstallBehavior()
-	handleThirdPartyOptions(false)
+	handle(false)
 	return true
 EndFunction

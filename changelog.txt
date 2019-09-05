@@ -1,5 +1,9 @@
 v1.4.0
 Switched to Jiffy to simplify library dependencies
+Integrated Inject-Tec v1.7.0 for developer-friendly Hexidecimal Digit ID remote form lookups
+Integrated Dynamic Terminal v1.5.0
+Integrated Chronicle v1.2.0
+Integrated Recipe Container v2.0.0 for thread safety enhancements and just-in-time updates of large data sets
 
 v1.3.0
 Integrated Loggout v1.1.0

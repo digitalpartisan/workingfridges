@@ -34,7 +34,7 @@ Function updateState()
 	endif
 	
 	bIsValid = true
-	bHasRun = option.hasRun()
+	bHasRun = option.getHasRun()
 	bNeedsSetup = option.needsSetup()
 	bNeedsTeardown = option.needsTeardown()
 EndFunction

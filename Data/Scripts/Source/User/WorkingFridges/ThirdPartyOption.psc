@@ -1,66 +1,29 @@
-Scriptname WorkingFridges:ThirdPartyOption extends RecipeContainer:RemoteRecipes Conditional
+Scriptname WorkingFridges:ThirdPartyOption extends RecipeContainer:Recipe:Builder:Definitions Conditional
 
 Import DialogueDrinkingBuddyScript
 
+Chronicle:Package Property MyPackage Auto Const Mandatory
+InjectTec:Plugin Property Plugin Auto Const Mandatory
 InjectTec:Injector:Bulk Property Injections = None Auto Const
-RecipeContainer:Logic:Fridge Property WorkingFridges_FridgeType Auto Const Mandatory
-WorkingFridges:ThirdPartyContainer Property WorkingFridges_Testing_ThirdPartyLocker Auto Const Mandatory
 
-Bool bHasRun = false Conditional
-BrewingRecipe[] recipeList = None
-
-Bool function hasRun()
-	return bHasRun
+RecipeContainer:Logic:Local Function getFridgeType()
+	return (MyPackage.getEngine().getCorePackage().getCustomData() as WorkingFridges:PackageData:Core).getFridgeType()
 EndFunction
 
-Bool Function couldRun()
+Bool Function customCouldBuildLogic()
 	return Plugin.isInstalled()
 EndFunction
 
 Bool Function needsSetup()
-	return !hasRun() && couldRun()
+	return !hasBuilt() && couldBuild()
 EndFunction
 
 Bool Function needsTeardown()
-	return hasRun() && !couldRun()
+	return getHasRun() && !couldBuild()
 EndFunction
 
-RecipeContainer:Logic:Fridge Function getFridgeType()
-	return WorkingFridges_FridgeType
-EndFunction
-
-BrewingRecipe[] Function getRecipes()
-	return recipeList
-EndFunction
-
-Function resetRecipeList()
-	recipeList = new BrewingRecipe[0]
-EndFunction
-
-Function buildRecipesLogic()
-{Written to be overriden in child scripts based on unpredictable needs.}
-	recipeList = buildRecipes()
-EndFunction
-
-Function buildRecipeList()
-	resetRecipeList()
-	buildRecipesLogic()
-EndFunction
-
-Function handleRecipes(Bool bAdd = true)
-	BrewingRecipe[] recipeData = getRecipes()
-	if (0 == recipeData.Length)
-		return
-	endif
-
-	WorkingFridges_Testing_ThirdPartyLocker.handleRecipes(recipeData, bAdd)
+Function handleFridgeType(Bool bAdd = true)
 	
-	if (bAdd)
-		getFridgeType().addRecipes(recipeData)
-	else
-		getFridgeType().removeRecipes(recipeData)
-		resetRecipeList() ; pure paranoia, but that never hurt anyone
-	endif
 EndFunction
 
 Function handleInjections(Bool bInject = true, Bool bForce = false)
@@ -76,30 +39,25 @@ Function handleInjections(Bool bInject = true, Bool bForce = false)
 EndFunction
 
 Function setup()
-	if (hasRun())
+	if (!needsSetup())
 		return
 	endif
-
+	
 	WorkingFridges:Logger.logThirdPartyOptionSettingUp(self)
 	
-	buildRecipeList()
+	Start()
 	handleInjections()
-	handleRecipes()
-	
-	bHasRun = true
 EndFunction
 
 Function teardown()
-	if (!hasRun())
+	if (!hasBuilt())
 		return
 	endif
-
+	
 	WorkingFridges:Logger.logThirdPartyOptionTearingDown(self)
 	
-	handleRecipes(false)
 	handleInjections(false)
-	
-	bHasRun = false
+	Stop()
 EndFunction
 
 Function stateCheck()
@@ -114,4 +72,26 @@ Function stateCheck()
 		teardown()
 		return
 	endif
+EndFunction
+
+Function handle(Bool bCheck = true)
+	if (bCheck)
+		stateCheck()
+		return
+	endif
+	
+	teardown()
+EndFunction
+
+Function handleBulk(WorkingFridges:ThirdPartyOption[] options, Bool bCheck = true) Global
+	if (!options || options.Length)
+		return
+	endif
+	
+	Int iCounter = 0
+	while (iCounter < options.Length)
+		if (options[iCounter])
+			options[iCounter].handle(bCheck)
+		endif
+	endWhile
 EndFunction
