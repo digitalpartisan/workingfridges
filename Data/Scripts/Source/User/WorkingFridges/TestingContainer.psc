@@ -33,9 +33,15 @@ EndFunction
 Function refreshContainer()
 	clearContainer()
 	
-	if (!BuilderList.hasData())
+	if (!BuilderList || !BuilderList.hasData())
 		return
 	endif
+	
+	Int iCounter = 0
+	while (iCounter < BuilderList.getSize())
+		handleBuilder(BuilderList.getBuilder(iCounter))
+		iCounter += 1
+	endWhile
 EndFunction
 
 Event RecipeContainer:Recipe:Builder:List.RebuildRequired(RecipeContainer:Recipe:Builder:List akSender, Var[] akArgs)

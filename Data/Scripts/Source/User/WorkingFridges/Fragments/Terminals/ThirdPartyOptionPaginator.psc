@@ -115,4 +115,4 @@ EndFunction
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
-WorkingFridges:ThirdPartyOption:Paginator Property ThirdPartyOptionPaginator Auto Const
+RecipeContainer:CrossPluginIntegrator:Paginator Property ThirdPartyOptionPaginator Auto Const

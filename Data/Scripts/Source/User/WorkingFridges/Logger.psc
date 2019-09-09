@@ -16,14 +16,14 @@ Bool Function error(String sMessage, String[] tags = None) Global
 	return Jiffy:Loggout.error(getName(), sMessage, tags)
 EndFunction
 
-Bool Function logThirdPartyOptionCheckingState(WorkingFridges:ThirdPartyOption optionRef) Global
-	return log(optionRef + " third party option is checking its state")
+Bool Function logNoCorePackageData(WorkingFridges:ThirdPartyOption option) Global
+	return error(option + " detects no core package custom data")
 EndFunction
 
-Bool Function logThirdPartyOptionSettingUp(WorkingFridges:ThirdPartyOption optionRef) Global
-	return log(optionRef + " third party option is setting up")
+Bool Function logCorePackageDataWrongType(WorkingFridges:ThirdPartyOption option) Global
+	return error(option + " find core package custom data is wrong type")
 EndFunction
 
-Bool Function logThirdPartyOptionTearingDown(WorkingFridges:ThirdPartyOption optionRef) Global
-	return log(optioNRef + " third party option is tearing down")
+Bool Function logCorePackageFridgeType(WorkingFridges:ThirdPartyOption option, RecipeContainer:Logic:Local containerType) Global
+	return log(option + " found fridge type " + containerType)
 EndFunction

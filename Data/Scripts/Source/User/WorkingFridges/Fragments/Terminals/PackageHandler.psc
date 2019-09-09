@@ -4,7 +4,7 @@ Scriptname WorkingFridges:Fragments:Terminals:PackageHandler Extends Terminal Hi
 ;BEGIN FRAGMENT Fragment_Terminal_01
 Function Fragment_Terminal_01(ObjectReference akTerminalRef)
 ;BEGIN CODE
-OptionData.setData(PackageHandler.getThirdPartyOptions())
+OptionData.setData(WorkingFridges_Package_Handler.getCrossPluginIntegrators())
 OptionPaginator.init(akTerminalRef, OptionData)
 ;END CODE
 EndFunction
@@ -13,15 +13,15 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_Terminal_02
 Function Fragment_Terminal_02(ObjectReference akTerminalRef)
 ;BEGIN CODE
-PackageHandler.uninstall()
+WorkingFridges_Package_Handler.uninstall()
 ;END CODE
 EndFunction
 ;END FRAGMENT
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
-WorkingFridges:PackageHandler Property PackageHandler Auto Const
+RecipeContainer:ChroniclePackage:Handler Property WorkingFridges_Package_Handler Auto Const
 
 DynamicTerminal:ListWrapper:DynamicArray Property OptionData Auto Const
 
-WorkingFridges:ThirdPartyOption:Paginator Property OptionPaginator Auto Const
+RecipeContainer:CrossPluginIntegrator:Paginator Property OptionPaginator Auto Const

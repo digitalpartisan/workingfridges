@@ -19,4 +19,4 @@ EndFunction
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
-WorkingFridges:ThirdPartyOption:Handler Property WorkingFridges_ThirdPartyOption_Handler Auto Const
+RecipeContainer:CrossPluginIntegrator:Handler Property WorkingFridges_ThirdPartyOption_Handler Auto Const
