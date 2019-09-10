@@ -23,3 +23,16 @@ RecipeContainer:Logic:Local Function getContainerType()
 	WorkingFridges:Logger.logCorePackageFridgeType(self, result)
 	return result
 EndFunction
+
+Function retrofit()
+	if ("" != GetState())
+		return
+	endif
+	
+	Bool bStart = hasRun()
+	goToWaiting()
+	
+	if (bStart)
+		Start()
+	endif
+EndFunction
