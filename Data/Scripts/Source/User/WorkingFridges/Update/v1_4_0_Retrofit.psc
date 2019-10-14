@@ -1,11 +1,11 @@
 Scriptname WorkingFridges:Update:v1_4_0_Retrofit extends Chronicle:Package:Update
 
 Function startFridge()
-	(getPackage().getCustomData() as WorkingFridges:PackageData:Core).getFridgeType().Start()
+	WorkingFridges:Dependencies.getInstance().getContainerType().Start()
 EndFunction
 
 Function retrofitThirdPartyOptions()
-	WorkingFridges:ThirdPartyOption[] integrators = (getPackage().getCustomData() as WorkingFridges:PackageData:Core).getCrossPluginIntegrators() as WorkingFridges:ThirdPartyOption[]
+	WorkingFridges:ThirdPartyOption[] integrators = WorkingFridges:Dependencies.getInstance().getIntegratorSearcher().searchOneCrossPluginIntegrator(getPackage()).Integrators as WorkingFridges:ThirdPartyOption[]
 	if (!integrators || !integrators.Length)
 		return
 	endif

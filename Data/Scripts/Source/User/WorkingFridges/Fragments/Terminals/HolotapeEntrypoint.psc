@@ -21,6 +21,6 @@ EndFunction
 
 Chronicle:Engine:Handler Property WorkingFridges_Engine_Handler Auto Const
 
-Chronicle:Engine:PackageList Property PackageData Auto Const
+Chronicle:Package:ListWrapper Property PackageData Auto Const
 
 Chronicle:Package:Paginator Property PackagePaginator Auto Const

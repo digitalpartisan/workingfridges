@@ -7,21 +7,7 @@ Chronicle:Package Function getPackage()
 EndFunction
 
 RecipeContainer:Logic:Local Function getContainerType()
-	Chronicle:Package:CustomData customData = getPackage().getEngine().getCorePackage().getCustomData()
-	if (!customData)
-		WorkingFridges:Logger.logNoCorePackageData(self)
-		return None
-	endif
-	
-	WorkingFridges:PackageData:Core coreData = customData as WorkingFridges:PackageData:Core
-	if (!customData)
-		WorkingFridges:Logger.logCorePackageDataWrongType(self)
-		return None
-	endif
-	
-	RecipeContainer:Logic:Local result = coreData.getFridgeType()
-	WorkingFridges:Logger.logCorePackageFridgeType(self, result)
-	return result
+	return WorkingFridges:Dependencies.getInstance().getContainerType()
 EndFunction
 
 Function retrofit()
