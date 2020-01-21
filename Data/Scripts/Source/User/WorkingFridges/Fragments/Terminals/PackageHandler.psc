@@ -4,7 +4,7 @@ Scriptname WorkingFridges:Fragments:Terminals:PackageHandler Extends Terminal Hi
 ;BEGIN FRAGMENT Fragment_Terminal_01
 Function Fragment_Terminal_01(ObjectReference akTerminalRef)
 ;BEGIN CODE
-RecipeContainer:CrossPluginIntegrator:PackageBehavior integratorBehavior = WorkingFridges:Dependencies.getInstance().getIntegratorSearcher().searchOneCrossPluginIntegrator(WorkingFridges_Package_Handler.getPackage())
+InjectTec:Integrator:ChronicleBehavior integratorBehavior = WorkingFridges:Dependencies.getInstance().getIntegratorSearcher().searchOneIntegrator(WorkingFridges_Package_Handler.getPackage())
 if (integratorBehavior)
 	OptionData.setData(integratorBehavior.Integrators as Form[])
 else
@@ -29,4 +29,4 @@ Chronicle:Package:Handler Property WorkingFridges_Package_Handler Auto Const
 
 DynamicTerminal:ListWrapper:FormArray:Dynamic Property OptionData Auto Const
 
-RecipeContainer:CrossPluginIntegrator:Paginator Property OptionPaginator Auto Const
+InjectTec:Integrator:Paginator Property OptionPaginator Auto Const

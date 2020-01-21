@@ -5,17 +5,14 @@ Function startFridge()
 EndFunction
 
 Function retrofitThirdPartyOptions()
-	WorkingFridges:ThirdPartyOption[] integrators = WorkingFridges:Dependencies.getInstance().getIntegratorSearcher().searchOneCrossPluginIntegrator(getPackage()).Integrators as WorkingFridges:ThirdPartyOption[]
+	WorkingFridges:ThirdPartyOption[] integrators = WorkingFridges:Dependencies.getInstance().getIntegratorSearcher().searchOneIntegrator(getPackage()).getIntegrators() as WorkingFridges:ThirdPartyOption[]
 	if (!integrators || !integrators.Length)
 		return
 	endif
 	
 	Int iCounter = 0
 	while (iCounter < integrators.Length)
-		if (integrators[iCounter])
-			integrators[iCounter].retrofit()
-		endif
-		
+		integrators[iCounter] && integrators[iCounter].retrofit()
 		iCounter += 1
 	endWhile
 EndFunction

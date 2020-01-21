@@ -1,13 +1,13 @@
 Scriptname WorkingFridges:Dependencies extends Quest Const
 
-RecipeContainer:CrossPluginIntegrator:PackageBehavior:Search Property WorkingFridges_ThirdPartyOption_Searcher Auto Const Mandatory
+InjectTec:Integrator:ChronicleBehavior:Search Property WorkingFridges_ThirdPartyOption_Searcher Auto Const Mandatory
 RecipeContainer:Logic:Local Property WorkingFridges_FridgeType Auto Const Mandatory
 
 WorkingFridges:Dependencies Function getInstance() Global
 	return Game.GetFormFromFile(0x0000CC5F, "WorkingFridges.esp") as WorkingFridges:Dependencies
 EndFunction
 
-RecipeContainer:CrossPluginIntegrator:PackageBehavior:Search Function getIntegratorSearcher()
+InjectTec:Integrator:ChronicleBehavior:Search Function getIntegratorSearcher()
 	return WorkingFridges_ThirdPartyOption_Searcher
 EndFunction
 

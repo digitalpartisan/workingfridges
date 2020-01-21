@@ -115,4 +115,4 @@ EndFunction
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
-RecipeContainer:CrossPluginIntegrator:Paginator Property ThirdPartyOptionPaginator Auto Const
+InjectTec:Integrator:Paginator Property ThirdPartyOptionPaginator Auto Const

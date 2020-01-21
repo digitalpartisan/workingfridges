@@ -44,18 +44,10 @@ Function refreshContainer()
 	endWhile
 EndFunction
 
-Event RecipeContainer:Recipe:Builder:List.RebuildRequired(RecipeContainer:Recipe:Builder:List akSender, Var[] akArgs)
-	if (BuilderList == akSender)
-		refreshContainer()
-	endif
-EndEvent
-
 Event OnQuestInit()
 	clearContainer()
-	RegisterForCustomEvent(BuilderList, "RebuildRequired")
 EndEvent
 
 Event OnQuestShutdown()
-	UnregisterForCustomEvent(BuilderList, "RebuildRequired")
 	clearContainer()
 EndEvent

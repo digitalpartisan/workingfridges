@@ -12,11 +12,19 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_Terminal_02
 Function Fragment_Terminal_02(ObjectReference akTerminalRef)
 ;BEGIN CODE
-WorkingFridges_ThirdPartyOption_Handler.teardown(akTerminalRef)
+WorkingFridges_ThirdPartyOption_Handler.shutdown(akTerminalRef)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_Terminal_03
+Function Fragment_Terminal_03(ObjectReference akTerminalRef)
+;BEGIN CODE
+WorkingFridges_ThirdPartyOption_Handler.startup(akTerminalRef)
 ;END CODE
 EndFunction
 ;END FRAGMENT
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
-RecipeContainer:CrossPluginIntegrator:Handler Property WorkingFridges_ThirdPartyOption_Handler Auto Const
+InjectTec:Integrator:Handler Property WorkingFridges_ThirdPartyOption_Handler Auto Const
