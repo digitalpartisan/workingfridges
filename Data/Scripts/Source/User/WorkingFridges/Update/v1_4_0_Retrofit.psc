@@ -5,14 +5,17 @@ Function startFridge()
 EndFunction
 
 Function retrofitThirdPartyOptions()
-	WorkingFridges:ThirdPartyOption[] integrators = WorkingFridges:Dependencies.getInstance().getIntegratorSearcher().searchOneIntegrator(getPackage()).getIntegrators() as WorkingFridges:ThirdPartyOption[]
-	if (!integrators || !integrators.Length)
+	FormList integrators = WorkingFridges:Dependencies.getInstance().getIntegratorSearcher().searchOneIntegrator(getPackage()).getIntegrators()
+	if (!integrators || !integrators.GetSize())
 		return
 	endif
 	
 	Int iCounter = 0
-	while (iCounter < integrators.Length)
-		integrators[iCounter] && integrators[iCounter].retrofit()
+	Int iSize = integrators.GetSize()
+	WorkingFridges:ThirdPartyOption currentOption = None
+	while (iCounter < iSize)
+		currentOption = integrators.GetAt(iCounter) as WorkingFridges:ThirdPartyOption
+		currentOption && currentOption.retrofit()
 		iCounter += 1
 	endWhile
 EndFunction

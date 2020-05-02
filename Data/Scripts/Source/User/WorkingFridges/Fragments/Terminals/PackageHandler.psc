@@ -6,7 +6,7 @@ Function Fragment_Terminal_01(ObjectReference akTerminalRef)
 ;BEGIN CODE
 InjectTec:Integrator:ChronicleBehavior integratorBehavior = WorkingFridges:Dependencies.getInstance().getIntegratorSearcher().searchOneIntegrator(WorkingFridges_Package_Handler.getPackage())
 if (integratorBehavior)
-	OptionData.setData(integratorBehavior.Integrators as Form[])
+	OptionData.setData(integratorBehavior.Integrators)
 else
 	OptionData.setData(None)
 endif
@@ -27,6 +27,6 @@ EndFunction
 
 Chronicle:Package:Handler Property WorkingFridges_Package_Handler Auto Const
 
-DynamicTerminal:ListWrapper:FormArray:Dynamic Property OptionData Auto Const
+DynamicTerminal:ListWrapper:FormList:Dynamic Property OptionData Auto Const
 
 InjectTec:Integrator:Paginator Property OptionPaginator Auto Const
