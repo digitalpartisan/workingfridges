@@ -41,5 +41,6 @@ EndFunction
 Function updateLogic()
 	startFridge()
 	retrofitThirdPartyOptions()
+	fixDiamondCityReferences()
 	sendSuccess()
 EndFunction
