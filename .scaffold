@@ -1,4 +1,4 @@
 SCAFFOLD_TEMP_CONFIG_MOD="WorkingFridges"
 SCAFFOLD_TEMP_CONFIG_GAME="fallout4"
-SCAFFOLD_TEMP_CONFIG_DEPENDENCIES="Jiffy,InjectTec,DynamicTerminal,Chronicle,SimpleSettlementSolutions,RecipeContainer"
+SCAFFOLD_TEMP_CONFIG_DEPENDENCIES="Jiffy,InjectTec,DynamicTerminal,Chronicle,SimpleSettlementSolutions,RecipeContainer,Spawny"
 SCAFFOLD_TEMP_CONFIG_EXCLUSIONPATTERN=""
